@@ -13,7 +13,7 @@ import android.widget.Toast;
 public class MainActivity extends ActionBarActivity {
 
     private String text, operation;
-    private int number1, number2, total;
+    private int number1, number2;
     private Button n0, n1, n2, n3, n4, n5, n6, n7, n8, n9,
             plus, divide, equal, period, minus, multiply, delete, science;
     private TextView display;
@@ -25,8 +25,8 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-    number1 = -1;
-    number2 = -1;
+    number1 = 0;
+    number2 = 0;
     text = "";
     operation = "nothing";
     second = false;
@@ -34,17 +34,21 @@ public class MainActivity extends ActionBarActivity {
 
     display = (TextView) findViewById(R.id.display);
 
+    Intent intent = getIntent();
 
-        science = (Button)findViewById(R.id.next);
-        science.setOnClickListener(new View.OnClickListener() {
+        period = (Button)findViewById(R.id.period);
+        period.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, scientific.class);
-                intent.putExtra("num", number1);
+                Intent intent = new Intent(getApplicationContext(), MainActivity2Activity.class);
                 startActivity(intent);
             }
 
         });
+
+
+
+
 
 
         n0 = (Button)findViewById(R.id.n0);
@@ -198,6 +202,8 @@ public class MainActivity extends ActionBarActivity {
                 cal();
             }
         });
+
+
     }
 
     public void numbers(int i){
@@ -229,8 +235,8 @@ public class MainActivity extends ActionBarActivity {
 
     public void deleting(){
         text = "";
-        number1 = -1;
-        number2 = -1;
+        number1 = 0;
+        number2 = 0;
         decimal = 0.0;
         second = false;
         operation = "nothing";

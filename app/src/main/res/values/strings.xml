@@ -33,4 +33,5 @@
     <string name="left">(</string>
     <string name="right">)</string>
     <string name="menu">Scientific</string>
+    <string name="title_activity_main_activity2">MainActivity2Activity</string>
 </resources>
