@@ -41,6 +41,7 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity2Activity.class);
+                intent.putExtra("num", number1);
                 startActivity(intent);
             }
 

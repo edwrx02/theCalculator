@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import java.lang.Math;
 
 
 public class MainActivity2Activity extends ActionBarActivity {
@@ -36,6 +37,9 @@ public class MainActivity2Activity extends ActionBarActivity {
         display = (TextView) findViewById(R.id.display);
 
         Intent intent = getIntent();
+        number1 = intent.getIntExtra("num", 0);
+        text = Integer.toString(number1);
+        display.setText(text);
 
         delete = (Button)findViewById(R.id.delete);
         delete.setOnClickListener(new View.OnClickListener() {
@@ -45,6 +49,118 @@ public class MainActivity2Activity extends ActionBarActivity {
             }
         });
 
+
+        sin = (Button)findViewById(R.id.sin);
+        sin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                operations("sin");
+            }
+        });
+
+        cos = (Button)findViewById(R.id.cos);
+        cos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                operations("cos");
+            }
+        });
+
+        tan = (Button)findViewById(R.id.tan);
+        tan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                operations("tan");
+            }
+        });
+
+        ii = (Button)findViewById(R.id.i);
+        ii.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                operations("i");
+            }
+        });
+
+        ln = (Button)findViewById(R.id.ln);
+        ln.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                operations("ln");
+            }
+        });
+
+        log = (Button)findViewById(R.id.log);
+        log.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                operations("log");
+            }
+        });
+
+        pi = (Button)findViewById(R.id.pi);
+        pi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                operations("pi");
+            }
+        });
+
+        ee = (Button)findViewById(R.id.e);
+        ee.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                operations("e");
+            }
+        });
+
+        percent = (Button)findViewById(R.id.percent);
+        percent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                operations("percent");
+            }
+        });
+
+        fact = (Button)findViewById(R.id.fact);
+        fact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                operations("fact");
+            }
+        });
+
+        root = (Button)findViewById(R.id.root);
+        root.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                operations("root");
+            }
+        });
+
+        square = (Button)findViewById(R.id.exp);
+        square.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                operations("square");
+            }
+        });
+
+        left = (Button)findViewById(R.id.left);
+        left.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                operations("left");
+            }
+        });
+
+        right = (Button)findViewById(R.id.right);
+        right.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                operations("right");
+            }
+        });
 
     }
 
@@ -63,13 +179,16 @@ public class MainActivity2Activity extends ActionBarActivity {
         second = true;
         display.setText(s);
         text = "";
+        cal();
     }
 
     public void cal() {
         text = "";
-        if (operation == "+") {
-            number1 = number1 + number2;
-            text = Integer.toString(number1);
+        if (operation == "sin") {
+            decimal = (double)number1;
+            decimal = Math.sin(decimal);
+            text = Double.toString(decimal);
+
         }
         else if(operation == "-") {
             number1 = number1 - number2;
