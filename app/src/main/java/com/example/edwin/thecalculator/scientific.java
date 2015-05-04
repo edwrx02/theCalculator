@@ -1,5 +1,8 @@
 package com.example.edwin.thecalculator;
 
+/**
+ * Created by Edwin on 5/3/2015.
+ */
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -10,12 +13,12 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends ActionBarActivity {
+public class scientific extends ActionBarActivity {
 
     private String text, operation;
     private int number1, number2, total;
     private Button n0, n1, n2, n3, n4, n5, n6, n7, n8, n9,
-            plus, divide, equal, period, minus, multiply, delete, science;
+            plus, divide, equal, period, minus, multiply, delete;
     private TextView display;
     private boolean second;
     private double decimal;
@@ -23,28 +26,19 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.scientific);
 
-    number1 = -1;
-    number2 = -1;
-    text = "";
-    operation = "nothing";
-    second = false;
-    decimal = 0.0;
-
-    display = (TextView) findViewById(R.id.display);
+        number1 = -1;
+        number2 = -1;
+        text = "";
+        operation = "nothing";
+        second = false;
+        decimal = 0.0;
 
 
-        science = (Button)findViewById(R.id.next);
-        science.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, scientific.class);
-                intent.putExtra("num", number1);
-                startActivity(intent);
-            }
+        display = (TextView) findViewById(R.id.display);
 
-        });
+        Intent intent = getIntent();
 
 
         n0 = (Button)findViewById(R.id.n0);
@@ -52,9 +46,9 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
 
-                    if (second == false){
-                        numbers(0);}
-                    else{numbers2(0);}
+                if (second == false){
+                    numbers(0);}
+                else{numbers2(0);}
             }
         });
 

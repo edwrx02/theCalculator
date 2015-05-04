@@ -18,5 +18,19 @@
     <string name="plus">+</string>
     <string name="minus">-</string>
     <string name="divide">/</string>
-
+    <string name="cos">cos</string>
+    <string name="tan">tan</string>
+    <string name="i">\u0130</string>
+    <string name="sin">sin</string>
+    <string name="ln">ln</string>
+    <string name="log">log</string>
+    <string name="pie">\u03C0</string>
+    <string name="e">\u0435</string>
+    <string name="percent">%</string>
+    <string name="fact">!</string>
+    <string name="root">\u221A</string>
+    <string name="exp">^</string>
+    <string name="left">(</string>
+    <string name="right">)</string>
+    <string name="menu">Scientific</string>
 </resources>
